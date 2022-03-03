@@ -28,6 +28,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
+RUN sudo apt-get install openjdk-11-jdk
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
