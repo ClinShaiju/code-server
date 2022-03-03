@@ -32,6 +32,14 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk ca-certificates-java && \
+    apt-get clean && \
+    update-ca-certificates -f
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
+RUN export JAVA_HOME
+CMD ["java", "-version"]
+
 # -----------
 
 # Port
