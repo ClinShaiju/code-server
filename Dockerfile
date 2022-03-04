@@ -65,7 +65,6 @@ RUN sudo apt-get update
 #RUN sudo apt-get install nautilus -y
 
 RUN sudo apt install -y fuse
-RUN rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
