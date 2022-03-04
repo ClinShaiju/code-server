@@ -62,7 +62,9 @@ RUN  sudo apt-get update \
 
 RUN sudo apt-get update
 # Installing Nautilus File Manager
-RUN sudo apt-get install nautilus -y
+#RUN sudo apt-get install nautilus -y
+
+RUN sudo apt install fuse
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
