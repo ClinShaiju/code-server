@@ -59,6 +59,10 @@ RUN  sudo apt-get update \
 # Install Chrome.
 #RUN sudo apt-get update && apt-get -y install google-chrome-stable
 
+RUN apt-get update
+# Installing Nautilus File Manager
+RUN apt-get install nautilus -y
+
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
