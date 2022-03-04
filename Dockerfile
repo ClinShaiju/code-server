@@ -5,6 +5,7 @@ USER coder
 
 # Apply VS Code settings
 COPY deploy-container/settings.json .local/share/code-server/User/settings.json
+COPY deploy-container/rclone-tasks.json .local/share/code-server/User/tasks.json
 
 # Use bash shell
 ENV SHELL=/bin/bash
