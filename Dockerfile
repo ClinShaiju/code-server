@@ -27,7 +27,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # RUN code-server --install-extension esbenp.prettier-vscode
 RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension vscode-icons-team.vscode-icons
-RUN code-server --install-extension zhuangtongfa.material-theme
+RUN code-server --install-extension akamud.vscode-theme-onedark
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
