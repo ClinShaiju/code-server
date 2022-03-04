@@ -44,14 +44,6 @@ RUN  sudo apt-get update \
   && sudo apt-get install -y wget \
   && sudo rm -rf /var/lib/apt/lists/*
   
-  
-RUN sudo apt-get update
-
-#Download and install chrome
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
-RUN sudo apt-get install -f
-
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
