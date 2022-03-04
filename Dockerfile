@@ -39,6 +39,15 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
 CMD ["java", "-version"]
 
+#install wget
+RUN  sudo apt-get update \
+  && sudo apt-get install -y wget \
+  && sudo rm -rf /var/lib/apt/lists/*
+  
+#Download and install chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN sudo dpkg -i google-chrome-stable_current_amd64.deb
+
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
