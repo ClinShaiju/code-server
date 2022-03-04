@@ -28,10 +28,10 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk ca-certificates-java && \
-    apt-get clean && \
-    update-ca-certificates -f
+RUN sudo apt-get update && \
+    sudo apt-get install -y openjdk-11-jdk ca-certificates-java && \
+    sudo apt-get clean && \
+    sudo update-ca-certificates -f
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
 CMD ["java", "-version"]
