@@ -44,6 +44,21 @@ RUN  sudo apt-get update \
   && sudo apt-get install -y wget \
   && sudo rm -rf /var/lib/apt/lists/*
   
+  
+# Install x11vnc.
+RUN sudo apt-get install -y x11vnc
+# Install xvfb.
+RUN sudo apt-get install -y xvfb
+# Install fluxbox.
+RUN sudo apt-get install -y fluxbox
+# Install wmctrl.
+RUN sudo apt-get install -y wmctrl
+# Set the Chrome repo.
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+# Install Chrome.
+RUN sudo apt-get update && apt-get -y install google-chrome-stable
+
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
