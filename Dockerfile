@@ -72,8 +72,10 @@ RUN sudo apt-get update
 # Installing Nautilus File Manager
 #RUN sudo apt-get install nautilus -y
 
+#gnupg for heroku
 RUN sudo apt-get update && sudo apt-get install -y gnupg
 
+#install heroku CLI
 RUN sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sudo sh
 
 RUN sudo apt-get update
@@ -84,6 +86,7 @@ RUN sudo apt-get install \
     lsb-release
 
 
+#install docker
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 
