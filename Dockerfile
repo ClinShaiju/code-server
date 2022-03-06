@@ -36,6 +36,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension vscode-icons-team.vscode-icons
 RUN code-server --install-extension zhuangtongfa.material-theme
+RUN code-server --install-extension ms-azuretools.vscode-docker
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
@@ -83,11 +84,11 @@ RUN sudo apt-get install \
     lsb-release
 
 
-RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 
 RUN echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 RUN sudo apt-get update
