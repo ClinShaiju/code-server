@@ -99,7 +99,7 @@ RUN sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
-
+RUN sudo service docker start
 
 # -----------
 
