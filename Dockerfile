@@ -66,6 +66,8 @@ RUN sudo apt-get update
 
 RUN sudo apt install -y fuse
 
+RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
