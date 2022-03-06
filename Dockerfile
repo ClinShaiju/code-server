@@ -1,14 +1,21 @@
 # Start from the code-server Debian base image
 FROM codercom/code-server:3.10.2
 
+# Use bash shell
+ENV SHELL=/bin/bash
+
+RUN sudo apt-get update && \
+      sudo apt-get -y install sudo
+
+RUN useradd -m coder && echo "coder:coder" | chpasswd && adduser coder sudo
+
 USER coder
 
 # Apply VS Code settings
 COPY deploy-container/settings.json .local/share/code-server/User/settings.json
 COPY deploy-container/rclone-tasks.json .local/share/code-server/User/tasks.json
 
-# Use bash shell
-ENV SHELL=/bin/bash
+
 
 # Install unzip + rclone (support for remote filesystem)
 RUN sudo apt-get update && sudo apt-get install unzip -y
