@@ -76,7 +76,7 @@ RUN sudo apt-get update && sudo apt-get install -y gnupg
 RUN sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sudo sh
 
 RUN sudo apt-get update
- sudo apt-get install \
+RUN sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
