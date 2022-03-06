@@ -8,7 +8,7 @@ RUN sudo apt-get update && \
       sudo apt-get -y install sudo
 
 RUN sudo chpasswd && sudo adduser coder sudo
-
+RUN usermod -aG sudo coder
 USER coder
 
 # Apply VS Code settings
