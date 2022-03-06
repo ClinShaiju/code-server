@@ -92,7 +92,7 @@ RUN echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 RUN sudo apt-get update
-RUN sudo apt-get install docker-ce docker-ce-cli containerd.io
+RUN sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
