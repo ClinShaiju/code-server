@@ -7,7 +7,7 @@ ENV SHELL=/bin/bash
 RUN sudo apt-get update && \
       sudo apt-get -y install sudo
 
-RUN useradd -m coder && echo "coder:coder" | chpasswd && adduser coder sudo
+RUN sudo chpasswd && sudo adduser coder sudo
 
 USER coder
 
