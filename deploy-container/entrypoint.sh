@@ -81,8 +81,8 @@ if [[ -z "${GITNAME}" ]]; then
 
 else 
     echo "[$PREFIX] Setting git options..."
-    git config user.name "${GITNAME}"
-    git config user.email "${GITEMAIL}"
+    git config --global user.name "${GITNAME}"
+    git config --global user.email "${GITEMAIL}"
     
 fi
 
