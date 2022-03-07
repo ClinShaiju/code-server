@@ -76,6 +76,16 @@ else
 
 fi
 
+if [[ -z "${GITNAME}" ]]; then
+    echo "[$PREFIX] RCLONE_DATA is not specified. Files will not persist"
+
+else 
+    echo "[$PREFIX] Setting git options..."
+    git config user.name "${GITNAME}"
+    git config user.email "${GITEMAIL}"
+    
+fi
+
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
 /usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080 $START_DIR
