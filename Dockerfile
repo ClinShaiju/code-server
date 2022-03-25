@@ -55,12 +55,12 @@ RUN  sudo apt-get update \
   
 
 # Set the Chrome repo.
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+#RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+#    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 # Install Chrome.
-RUN sudo apt-get update && apt-get -y install google-chrome-stable
+#RUN sudo apt-get update && apt-get -y install google-chrome-stable
 
-RUN sudo apt-get update
+#RUN sudo apt-get update
 
 #gnupg for heroku
 RUN sudo apt-get update && sudo apt-get install -y gnupg
