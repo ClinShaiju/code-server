@@ -36,7 +36,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension vscode-icons-team.vscode-icons
 RUN code-server --install-extension zhuangtongfa.material-theme
-RUN code-server --install-extension ms-azuretools.vscode-docker
+RUN code-server --install-extension ritwickdey.LiveServer
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
@@ -53,24 +53,14 @@ RUN  sudo apt-get update \
   && sudo apt-get install -y wget \
   && sudo rm -rf /var/lib/apt/lists/*
   
-  
-# Install x11vnc.
-#RUN sudo apt-get install -y x11vnc
-# Install xvfb.
-#RUN sudo apt-get install -y xvfb
-# Install fluxbox.
-#RUN sudo apt-get install -y fluxbox
-# Install wmctrl.
-#RUN sudo apt-get install -y wmctrl
+
 # Set the Chrome repo.
-#RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-#    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 # Install Chrome.
-#RUN sudo apt-get update && apt-get -y install google-chrome-stable
+RUN sudo apt-get update && apt-get -y install google-chrome-stable
 
 RUN sudo apt-get update
-# Installing Nautilus File Manager
-#RUN sudo apt-get install nautilus -y
 
 #gnupg for heroku
 RUN sudo apt-get update && sudo apt-get install -y gnupg
@@ -84,22 +74,6 @@ RUN sudo apt-get install \
     curl \
     gnupg \
     lsb-release
-
-
-#install docker
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-
-RUN echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-RUN sudo apt-get update
-RUN sudo apt-get -y install docker-ce docker-ce-cli containerd.io
-# Copy files: 
-# COPY deploy-container/myTool /home/coder/myTool
-
-RUN sudo service docker start
 
 # -----------
 
