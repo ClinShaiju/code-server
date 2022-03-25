@@ -78,6 +78,7 @@ RUN sudo apt-get install \
 # -----------
 
 # Port
+EXPOSE 5500
 ENV PORT=8080
 
 # Use our custom entrypoint script first
