@@ -10,5 +10,7 @@
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
-  }
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.port": 5500
 }
