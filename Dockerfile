@@ -1,5 +1,5 @@
 # Start from the code-server Debian base image
-FROM codercom/code-server:3.10.2
+FROM codercom/code-server:4.2.0
 
 # Use bash shell
 ENV SHELL=/bin/bash
