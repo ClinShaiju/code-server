@@ -1,5 +1,5 @@
 # Start from the code-server Debian base image
-FROM codercom/code-server:4.0.2
+FROM codercom/code-server:4.2.0
 
 # Use bash shell
 ENV SHELL=/bin/bash
@@ -36,7 +36,10 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension vscode-icons-team.vscode-icons
 RUN code-server --install-extension zhuangtongfa.material-theme
-RUN code-server --install-extension yandeu.five-server
+RUN code-server --install-extension yandeu.live-server
+RUN code-server --install-extension eamodio.gitlens
+RUN code-server --install-extension streetsidesoftware.code-spell-checker
+RUN code-server --install-extension LeonardSSH.vscord
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
